@@ -37,9 +37,9 @@ RUN npm install --omit=dev --no-audit --no-fund
 COPY turnstile_solver.js ./
 
 ENV CHROME_PATH=/usr/bin/google-chrome-stable
-ENV SOLVER_PORT=10000
 ENV SOLVER_HEADLESS=1
 
 EXPOSE 10000
 
-CMD ["node", "turnstile_solver.js", "--port", "10000", "--headless"]
+# Render sets PORT env var; the solver reads SOLVER_PORT, so bridge them
+CMD ["sh", "-c", "node turnstile_solver.js --port ${PORT:-10000} --headless"]
