@@ -1,0 +1,13 @@
+{
+  "name": "cursor-mail-solver",
+  "private": true,
+  "version": "1.0.0",
+  "description": "local cloudflare turnstile solver for the cursor mail checker",
+  "scripts": {
+    "start": "node turnstile_solver.js",
+    "selftest": "node turnstile_solver.js --selftest"
+  },
+  "dependencies": {
+    "puppeteer-core": "^25.0.0"
+  }
+}
